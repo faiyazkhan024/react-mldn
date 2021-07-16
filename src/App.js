@@ -16,7 +16,6 @@ const addItem = (items, { parent, child }) => {
 };
 
 const itemReducer = (items, action) => {
-  console.log(action.payload.parent);
   switch (action.type) {
     case "Add":
       return addItem(items, action.payload);
