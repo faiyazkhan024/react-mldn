@@ -9,9 +9,10 @@ import "./App.css";
 
 //* const itemSchema = { name: "String", children: [itemSchema] };
 
-const addItem = (items, action) => {
-  const { parent, child } = action.payload;
-
+const addItem = (items, { parent, child }) => {
+  if (parent === "root") {
+    return [...items, { name: child, children: [] }];
+  }
   const findItem = (items) => {
     const foundItem = items.find((item) => item.name === parent);
     if (!foundItem)
@@ -24,7 +25,7 @@ const itemReducer = (items, action) => {
   console.log(action.payload.parent);
   switch (action.type) {
     case "Add":
-      return addItem(items, action);
+      return addItem(items, action.payload);
     default:
       throw new Error("Invalid Input ");
   }
