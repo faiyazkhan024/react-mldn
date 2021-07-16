@@ -4,7 +4,7 @@ import "./Menu.css";
 
 const Menu = ({ items }) => {
   const showArrow = (item) => {
-    if (item.children.length !== 0) return "arrow";
+    if (item.children?.length !== 0) return "arrow";
   };
 
   const getNestedMenuItems = (items) => {
