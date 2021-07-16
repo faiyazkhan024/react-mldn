@@ -1,39 +1,37 @@
-import Form from "./components/Form/Form";
 import { useState, useReducer } from "react";
+
+import Form from "./components/Form/Form";
 import Menu from "./components/Menu/Menu";
+
+import initialItem from "./initialItem";
 
 import "./App.css";
 
-let initialItems = [
-  { name: "Left Dropdown", children: ["Item 1", "Item 2", "Item 3"] },
-  { name: "Middle Dropdown 1", children: ["Item 1", "Item 2", "Item 3"] },
-  { name: "Middle Dropdown 2", children: ["Item 1", "Item 2"] },
-  { name: "Middle Dropdown 3", children: ["Item 1"] },
-  {
-    name: "Right Dropdown",
-    children: ["Item 1", "Item 2", "Item 3", "Item 4"],
-  },
-];
+//* const itemSchema = { name: "String", children: [itemSchema] };
+
+const addItem = (items, action) => {
+  const { parent, child } = action.payload;
+
+  const findItem = (items) => {
+    const foundItem = items.find((item) => item.name === parent);
+    if (!foundItem)
+      return items.map((item) => item.children && findItem(item.children));
+    return foundItem;
+  };
+};
 
 const itemReducer = (items, action) => {
   console.log(action.payload.parent);
   switch (action.type) {
     case "Add":
-      return items.map((item) => {
-        if (item.name === action.payload.parent)
-          return {
-            name: item.name,
-            children: [...item.children, action.payload.child],
-          };
-        return { name: item.name, children: [...item.children] };
-      });
+      return addItem(items, action);
     default:
       throw new Error("Invalid Input ");
   }
 };
 
 const App = () => {
-  const [items, dispatch] = useReducer(itemReducer, initialItems);
+  const [items, dispatch] = useReducer(itemReducer, initialItem);
   const [parent, setParent] = useState("");
   const [child, setChild] = useState("");
 

@@ -3,6 +3,20 @@ import React from "react";
 import "./Form.css";
 
 const Form = ({ items, child, parent, onSubmit, setParent, setChild }) => {
+  const getAllOptions = (items) => {
+    if (!items) return;
+    return items.map((item, index) => {
+      return (
+        <>
+          <option key={index} value={item.name}>
+            {item.name}
+          </option>
+          {getAllOptions(item.children)}
+        </>
+      );
+    });
+  };
+
   return (
     <form onSubmit={onSubmit} className="form">
       <select
@@ -17,11 +31,10 @@ const Form = ({ items, child, parent, onSubmit, setParent, setChild }) => {
         <option className="placeholder" value="Parent Category" hidden>
           Parent Category
         </option>
-        {items.map((item, index) => (
-          <option key={index} value={item.name}>
-            {item.name}
-          </option>
-        ))}
+        <option className="root" value="root">
+          Root
+        </option>
+        {getAllOptions(items)}
       </select>
 
       <input

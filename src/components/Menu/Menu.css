@@ -5,55 +5,59 @@
   border-radius: 5px;
 }
 
-.menuItems {
+.list {
   display: flex;
-  align-items: center;
+  color: black;
+  background-color: white;
+  box-shadow: 0 0 5px 0 #cccccc;
+  border-top: 1px solid #cccccc;
 }
 
-.menuItem {
+.listItem {
   padding: 1rem 2rem;
-  position: relative;
+  width: max-content;
   cursor: pointer;
 }
 
-.menuItem:after {
+.listItem:hover {
+  color: cornflowerblue;
+}
+
+.arrow:after {
   content: "▼";
+  font-size: 0.8rem;
   position: absolute;
   right: 8px;
   bottom: 16px;
   cursor: pointer;
 }
 
-.subMenuItems {
-  display: none;
-}
-
-.menuItem:hover {
-  color: cornflowerblue;
-}
-
-.menuItem:hover:after {
+.arrow:hover:after {
   content: "▲";
+}
+
+.menuItem,
+.subMenuItem,
+.nestedMenuItem {
+  position: relative;
+}
+
+.subMenuItems,
+.nestedMenuItems {
+  display: none;
 }
 
 .menuItem:hover .subMenuItems {
   display: flex;
   flex-direction: column;
-  color: black;
-  background-color: white;
   position: absolute;
-  box-shadow: 0 0 5px 0 #cccccc;
   top: 100%;
 }
 
-.subMenuItem {
-  margin: 0 0.5rem;
-  padding: 1rem 2rem;
-  position: relative;
-  cursor: pointer;
-  border-top: 1px solid #cccccc;
-}
-
-.subMenuItem:hover {
-  color: cornflowerblue;
+.subMenuItem:hover .nestedMenuItems {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 100%;
+  top: 0;
 }
