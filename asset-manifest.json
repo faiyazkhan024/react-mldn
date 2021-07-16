@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/multi-level-category-menu/static/css/main.82207c39.chunk.css",
+    "main.js": "/multi-level-category-menu/static/js/main.cf3420f1.chunk.js",
+    "main.js.map": "/multi-level-category-menu/static/js/main.cf3420f1.chunk.js.map",
+    "runtime-main.js": "/multi-level-category-menu/static/js/runtime-main.c081b75d.js",
+    "runtime-main.js.map": "/multi-level-category-menu/static/js/runtime-main.c081b75d.js.map",
+    "static/js/2.efc31d67.chunk.js": "/multi-level-category-menu/static/js/2.efc31d67.chunk.js",
+    "static/js/2.efc31d67.chunk.js.map": "/multi-level-category-menu/static/js/2.efc31d67.chunk.js.map",
+    "static/js/3.8bdc6d31.chunk.js": "/multi-level-category-menu/static/js/3.8bdc6d31.chunk.js",
+    "static/js/3.8bdc6d31.chunk.js.map": "/multi-level-category-menu/static/js/3.8bdc6d31.chunk.js.map",
+    "index.html": "/multi-level-category-menu/index.html",
+    "static/css/main.82207c39.chunk.css.map": "/multi-level-category-menu/static/css/main.82207c39.chunk.css.map",
+    "static/js/2.efc31d67.chunk.js.LICENSE.txt": "/multi-level-category-menu/static/js/2.efc31d67.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c081b75d.js",
+    "static/js/2.efc31d67.chunk.js",
+    "static/css/main.82207c39.chunk.css",
+    "static/js/main.cf3420f1.chunk.js"
+  ]
+}
