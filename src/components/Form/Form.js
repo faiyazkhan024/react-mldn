@@ -7,12 +7,10 @@ const Form = ({ items, child, parent, onSubmit, setParent, setChild }) => {
     if (!items) return;
     return items.map((item, index) => {
       return (
-        <>
-          <option key={index} value={item.name}>
-            {item.name}
-          </option>
+        <React.Fragment key={index}>
+          <option value={item.name}>{item.name}</option>
           {getAllOptions(item.children)}
-        </>
+        </React.Fragment>
       );
     });
   };
@@ -46,7 +44,11 @@ const Form = ({ items, child, parent, onSubmit, setParent, setChild }) => {
         value={child}
         onChange={(e) => setChild(e.target.value)}
       />
-      <button type="submit" className="btn">
+      <button
+        type="submit"
+        className="btn"
+        disabled={(child === "") | (parent === "")}
+      >
         Submit
       </button>
     </form>

@@ -39,3 +39,12 @@
 .btn:hover {
   box-shadow: 0 0 5px 0 cornflowerblue;
 }
+
+.btn:disabled {
+  background-color: grey;
+}
+
+.btn:disabled:hover {
+  cursor: not-allowed;
+  box-shadow: none;
+}

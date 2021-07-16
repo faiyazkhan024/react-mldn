@@ -10,15 +10,9 @@ import "./App.css";
 //* const itemSchema = { name: "String", children: [itemSchema] };
 
 const addItem = (items, { parent, child }) => {
-  if (parent === "root") {
-    return [...items, { name: child, children: [] }];
-  }
-  const findItem = (items) => {
-    const foundItem = items.find((item) => item.name === parent);
-    if (!foundItem)
-      return items.map((item) => item.children && findItem(item.children));
-    return foundItem;
-  };
+  if (parent === "root") return [...items, { name: child, children: [] }];
+
+  return [...items];
 };
 
 const itemReducer = (items, action) => {
@@ -49,8 +43,8 @@ const App = () => {
         items={items}
         child={child}
         parent={parent}
-        setParent={setParent}
         setChild={setChild}
+        setParent={setParent}
         onSubmit={submitHandler}
       />
       <Menu items={items} />
