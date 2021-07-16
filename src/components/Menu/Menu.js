@@ -5,8 +5,8 @@ import "./Menu.css";
 const Menu = ({ items }) => {
   const [currentItemIndex, setCurrentItemIndex] = useState("");
 
-  const hasChildItem = (item) => {
-    return item.children.length !== 0;
+  const showArrow = (item) => {
+    if (item.children.length !== 0) return "arrow";
   };
 
   const getNestedMenuItems = (items) => {
@@ -19,7 +19,7 @@ const Menu = ({ items }) => {
             onMouseOver={() => setCurrentItemIndex(index)}
             onMouseLeave={() => setCurrentItemIndex("")}
             className={`listItem nestedMenuItem 
-              ${hasChildItem(item) && "arrow"} 
+              ${showArrow(item)} 
               ${currentItemIndex === index && "show"}`}
           >
             {item?.name}
@@ -34,18 +34,13 @@ const Menu = ({ items }) => {
     <nav className="menu">
       <ul className="list menuItems">
         {items.map((item, index) => (
-          <li
-            key={index}
-            className={`listItem menuItem ${hasChildItem(item) && "arrow"}`}
-          >
+          <li key={index} className={`listItem menuItem ${showArrow(item)}`}>
             {item.name}
             <ul className="list subMenuItems">
               {item.children?.map((item, index) => (
                 <li
                   key={index}
-                  className={`listItem subMenuItem ${
-                    hasChildItem(item) && "arrow"
-                  }`}
+                  className={`listItem subMenuItem ${showArrow(item)}`}
                 >
                   {item.name}
                   {getNestedMenuItems(item.children)}
