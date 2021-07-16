@@ -9,6 +9,7 @@
   display: flex;
   color: black;
   background-color: white;
+  border-radius: 5px;
   box-shadow: 0 0 5px 0 #cccccc;
   border-top: 1px solid #cccccc;
 }
