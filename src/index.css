@@ -25,3 +25,15 @@ button {
 button:hover {
   cursor: pointer;
 }
+
+select {
+  display: flex;
+  border: none;
+  outline: none;
+  appearance: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+}
