@@ -16,11 +16,7 @@ const Menu = ({ items }) => {
         {items.map((item, index) => (
           <li
             key={index}
-            onMouseOver={() => setCurrentItemIndex(index)}
-            onMouseLeave={() => setCurrentItemIndex("")}
-            className={`listItem nestedMenuItem 
-              ${showArrow(item)} 
-              ${currentItemIndex === index && "show"}`}
+            className={`listItem nestedMenuItem ${showArrow(item)}`}
           >
             {item?.name}
             {getNestedMenuItems(item.children)}
