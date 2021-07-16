@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./Menu.css";
 
 const Menu = ({ items }) => {
-  const [currentItemIndex, setCurrentItemIndex] = useState("");
-
   const showArrow = (item) => {
     if (item.children.length !== 0) return "arrow";
   };
