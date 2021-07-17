@@ -2,7 +2,9 @@ import React from "react";
 
 import "./Form.css";
 
+// Component to print Form.
 const Form = ({ items, child, parent, onSubmit, setParent, setChild }) => {
+  // Recursive method for getting all option (items)
   const getAllOptions = (items) => {
     if (!items) return;
     return items.map((item, index) => {
