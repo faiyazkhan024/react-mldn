@@ -7,9 +7,8 @@ const Menu = ({ items }) => {
     if (item.children?.length !== 0) return "arrow";
   };
 
-  const getNestedMenuItems = (items, name) => {
+  const getNestedMenuItems = (items) => {
     if (items?.length === 0) return;
-
     return (
       <ul className="list nestedMenuItems">
         {items.map((item, index) => (
@@ -18,7 +17,7 @@ const Menu = ({ items }) => {
             className={`listItem nestedMenuItem ${showArrow(item)}`}
           >
             {item.name}
-            {getNestedMenuItems(item.children, item)}
+            {getNestedMenuItems(item.children)}
           </li>
         ))}
       </ul>
