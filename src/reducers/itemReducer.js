@@ -1,5 +1,4 @@
 // Method to add Item
-
 const addItem = (items, { parent, child }) => {
   // Checking and Adding the Item if it is needed to add on root level.
   if (parent === "root") return [...items, { name: child, children: [] }];
@@ -11,7 +10,6 @@ const addItem = (items, { parent, child }) => {
   const updateItem = (items) =>
     items.map((item) => {
       // Checking if the current item object is the item to update.
-
       if (item.name === parent) {
         // Changing found to true if made into the check.
         found = true;

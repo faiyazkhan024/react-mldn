@@ -1,4 +1,6 @@
-# Multi Level Category Menu
+# MLDN-React
+
+Multi-level Dropdown Navbar in with n number of items can be added.
 
 ## Getting Started with Create React App
 
