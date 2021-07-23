@@ -1,7 +1,10 @@
 {
   "name": "mldn-react",
   "homepage": "https://faiyazkhan024.github.io/mldn-react",
-  "version": "0.1.0",
+  "description": "",
+  "version": "1.0.0",
+  "author": "Faiyaz Khan (Zarof)",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "gh-pages": "^3.2.3",
